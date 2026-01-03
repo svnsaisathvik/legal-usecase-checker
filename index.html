@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LawLens | Legal Use Case Explorer</title>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Optional: Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- ===== HEADER ===== -->
+    <header>
+      <div class="icon">⚖️</div>
+      <h1>LawLens</h1>
+      <p>
+        Discover legal requirements for your real-life situations.
+        Get instant insights into applicable laws, regulations,
+        and necessary steps.
+      </p>
+    </header>
+
+    <!-- ===== MAIN CARD ===== -->
+    <main class="card">
+
+      <!-- Input -->
+      <label for="usecase">
+        📘 Describe your situation
+      </label>
+
+      <textarea
+        id="usecase"
+        placeholder="Example: I am purchasing a new car in India and want to know the necessary steps according to the Motor Vehicles Act..."
+      ></textarea>
+
+      <button id="analyzeBtn">
+        🔍 Check Applicable Laws
+      </button>
+
+      <!-- Loading state -->
+      <div id="loading" class="hidden">
+        Analyzing legal requirements...
+      </div>
+
+      <!-- Result -->
+      <section id="result" class="hidden">
+        <h2>Legal Overview</h2>
+        <div id="response"></div>
+      </section>
+
+      <!-- Examples -->
+      <div class="examples">
+        <p>Try these examples:</p>
+
+        <div class="example-list">
+          <div
+            class="example-item"
+            onclick="document.getElementById('usecase').value='I am purchasing a new car in India';"
+          >
+            🚗 Purchasing a new car in India
+          </div>
+
+          <div
+            class="example-item"
+            onclick="document.getElementById('usecase').value='I want to start an online business in India';"
+          >
+            🛒 Starting an online business
+          </div>
+
+          <div
+            class="example-item"
+            onclick="document.getElementById('usecase').value='I am renting a residential property';"
+          >
+            🏠 Renting residential property
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===== DISCLAIMER ===== -->
+    <div class="disclaimer">
+      ⚠️ This tool provides educational information only and does not
+      constitute legal advice. Consult a qualified attorney for
+      specific legal matters.
+    </div>
+
+  </div>
+
+  <!-- Main script -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>
